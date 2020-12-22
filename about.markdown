@@ -1,10 +1,14 @@
 ---
 layout: page
-title: About
+title: about
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+mikecodes is a blog for updates and info on projects I'm working on.
+
+It's also a way to learn about and test out Jekyll and GitHub Pages.
+
+This is the default Jekyll theme called Minima.
 
 You can find the source code for Minima at GitHub:
 [jekyll][jekyll-organization] /
