@@ -1,5 +1,7 @@
 # mikecodes
 
+<https://mikeparish.github.io/mikecodes>
+
 mikecodes is a blog for updates and info on projects I'm working on.
 
 It's also a way to learn about and test out Jekyll and GitHub Pages.
