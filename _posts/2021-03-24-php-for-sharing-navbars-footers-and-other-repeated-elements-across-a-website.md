@@ -51,25 +51,24 @@ Once you have these files added to the server, you can then use PHP to add them 
 
 There's two things left to do:
 
-- Find the location in each file where you want to display the element and add it to the file like this:
 ~~~~
 <div class="hero-head" style="background-color: #0099FF;">
     <?php include 'navbar.php';?>
 </div>
 ~~~~
 
-- Change the extension of files that contain PHP from `filename.html` to `filename.php`.
+1. Find the location in each file where you want to display the element and add it to the file using the `include` keyword (as in the above example)
+2. Change the extension of files that contain PHP from `filename.html` to `filename.php`.
 
 ## Why Is This Better?
 There's a couple reasons I prefer this (and why I would assume most people would):
 1. Each file is cleaner and easier to scan when changing or adding code
 2. It's easier to distinguish between the files based on their content if you have multiple files open at once
 3. Since the navbar, footer, and sidebars are all repeated on most pages, you use these elements and PHP files almost like you would use components in Vue.js (or maybe it's the other way around)
-4. There's one central file for each element, and as updates are needed, the links or information can be updated in one place, rather than by needing to edit every page of the site where an element appears (which is tedious and increases the chances of making an error)
-5. In some files, where all of these elements appear, 50-150 lines of code have been replaced by 12
+4. There's one central file for each element, and as updates are needed, the links or information can be updated in one place, rather than by needing to edit every page of the site where an element appears (which is bad form, tedious, and increases the chances of making an error)
+5. In some files, where all of these elements appear, 50-150 lines of code have been replaced by 12 lines
 
-Overall, it took longer to write this blog post than it did to refactor the HTML and add PHP to the site! 
-
+Overall, it took longer to write this blog post than it did to refactor the HTML and add PHP to the files!
 ## Further Reading
 
 If anything on this page is unclear, here's a few resources that should help out if you get stuck:
