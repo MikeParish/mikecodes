@@ -50,13 +50,15 @@ I'd recommend using single quotes for the `echo` statement, as you will most lik
 Once you have these files added to the server, you can then use PHP to add them on each HTML page. 
 
 There's two things left to do:
-1. Find the location in each file where you want to display the element and add it to the file like this:
+
+- Find the location in each file where you want to display the element and add it to the file like this:
 ~~~~
 <div class="hero-head" style="background-color: #0099FF;">
     <?php include 'navbar.php';?>
 </div>
 ~~~~
-2. Change the extension of files that contain PHP from `filename.html` to `filename.php`.
+
+- Change the extension of files that contain PHP from `filename.html` to `filename.php`.
 
 ## Why Is This Better?
 There's a couple reasons I prefer this (and why I would assume most people would):
