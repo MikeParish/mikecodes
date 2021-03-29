@@ -8,7 +8,7 @@ The first Raspberry Pi project I worked on was the GPIO Music Box.
 
 Here's the [project page](https://projects.raspberrypi.org/en/projects/gpio-music-box) on [raspberrypi.org](https://www.raspberrypi.org).
 
-It's a simple project and a good introduction to the GPIO pins and how to use them, as well as importing modules, using built in functions, and using pygame (or at least pygame's built in sound mixer) to play sounds.
+It's a simple project and a good introduction to the GPIO (General-Purpose Input/Output) pins and how to use them, as well as importing modules, using built in functions, and using pygame (or at least pygame's built in sound mixer) to play sounds.
 
 ```
 import pygame
@@ -47,11 +47,11 @@ orange_button.when_pressed = bass.play
 white_button.when_pressed = glitch.play
 ```
 
-While working on the music box, I noticed that there is a considerable delay from the time a button is pressed, to the time a sound is played. (You can see/hear this delay in the first few seconds of the [project YouTube video](https://youtu.be/2izvSzQWYak) when Dr. Le Page 'plays' the music box.) 
+While working on the music box, I noticed that there is a considerable delay from the time a button is pressed, to the time a sound is played. (You can see and hear this delay in the first few seconds of the [project YouTube video](https://youtu.be/2izvSzQWYak) when Dr. Le Page 'plays' the music box.) 
 
 It's probably only a second of delay but this is a long amount of time if you're looking to play the music box like you would a keyboard or MPC or drum machine. With these sorts of instruments, the buttons or triggers need to feel like they play a sound instantaneously, with probably only a few milliseconds being an acceptable amount of delay. 
 
-It's similar to a gamepad, where a button press in a game makes a character perform an action; having a one second delay on a jump button could be the difference between making a successful leap or falling off the screen to your death.
+It's similar to a gamepad, where a button press in a game makes a character perform an action; having a one second delay on a jump button could be the difference between making a successful leap or falling off screen to your death.
 
 I guess what we're talking about here is lag. So you might say, well, what if you anticipated the lag? If you know there's that big of a delay, just hit the button a second earlier. 
 
@@ -63,7 +63,7 @@ A big part of my interest in this project was taking the first steps to creating
 
 After researching other Python libraries to play the sounds and eventually circling back around to pygame, I found that there is a way to lessen the delay, and it's an improvement over the original code. 
 
-Unfortunately, I don't think there's an official Raspberry Pi repo for this project that I can push this change to. But here is a solution for the delay.
+Unfortunately, I don't think there's an official Raspberry Pi repo for this project to which I can push this change. But here is a solution for the delay.
 
 ```
 #if using pygame version < 2.0.0
