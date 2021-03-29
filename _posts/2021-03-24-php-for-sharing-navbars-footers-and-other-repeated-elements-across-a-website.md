@@ -4,13 +4,13 @@ title:  "PHP for Sharing Navbars, Footers, and Other Repeated Elements Across a 
 category: webdev
 ---
 
-One thing I was thinking about when writing the [424 Recording Vue App](https://mikeparish.github.io/mikecodes/webdev/2021/03/23/424-recording-vue-app.html) post a couple days ago was implementing a navbar and footer across [424recording.com](https://424recording.com), the static website on which the Vue app is based. 
+One thing I was thinking about when writing the [424 Recording Vue App](https://mikeparish.github.io/mikecodes/webdev/2021/03/23/424-recording-vue-app.html) post yesterday was implementing a navbar and footer across [424recording.com](https://424recording.com), the static website on which the Vue app is based. 
 
-I wanted to do this without copying the HTML for these elements from page to page, which becomes a headache anytime the site is updated and/or as the number of pages on the site grows.
+I wanted to do this without copying the HTML for these elements from page to page, which becomes a headache any time the site is updated and/or as the number of pages on the site grows.
 
 As I mentioned in the previous post, I violated the DRY (Don't Repeat Yourself) Principle with repeating HTML for two reasons:
 1. Lack of knowledge at the time of the site's creation four years ago
-2. The site's origin as a two page website consisting of a landing page and a contact page (where copying over the navbar was a simple solution to get the site up and running, but which was then carried over as a bad habit into future iterations of the site)
+2. The site's origin as a two page website consisting of a landing page and a contact page (where copying over the navbar was a simple solution to get the site up and running, but which was then carried over as a bad habit into future iterations)
 
 Over time, while learning about web development and working on other projects, it became clear that there was a better solution, one that would involve either the use of PHP or JavaScript/jQuery to display repeated HTML across different pages of the site.
 
@@ -18,7 +18,7 @@ Over time, while learning about web development and working on other projects, i
 
 The main reasons I used PHP came down to speed, GoDaddy's cPanel/Linux server (where the site is hosted) already being equipped with a PHP interpreter, and (perhaps an edge-case but) if a user doesn't have JavaScript enabled in their browser, the navigational elements of the site would not be displayed, making the site unnavigable.
 
-The PHP solution is easy, too. I also have more experience using PHP from two classes that I've taken, Cloud Computing and E-Business Systems. I also like that PHP scripts run server-side, and there's just something I find enjoyable about working with the language.
+The PHP solution is easy, too. I also have more experience using PHP from two classes that I've taken, Cloud Computing and E-Business Systems. I also like that PHP scripts run server-side, and there's something I just find enjoyable about working with the language.
 
 ## But Why Do We Need a Scripting Language For This Task?
 
@@ -31,7 +31,7 @@ HTML is a markup language. This means it tells the browser how information shoul
 
 ## The Solution
 
-The first thing we need is a file that contains the navbar HTML we want to display on each page. The same goes for any element we want to display multiple times across different pages (footer, sidebar, etc.)
+The first thing we need is a PHP file that contains the navbar HTML we want to display on each page. The same goes for any element we want to display multiple times across different pages (footer, sidebars, etc.)
 
 I wound up having four files: `navbar.php`, `footer.php`, `left-sidebar.php`, and `right-sidebar.php`. 
 
@@ -43,11 +43,11 @@ The PHP for these files is the same (but with the HTML specific to each element 
     echo '<!--insert HTML here-->';
 ?>
 ~~~~
-The `echo` statement allows us to output strings and can contain HTML/markup. (You can read more about `echo` in the [PHP docs](https://www.php.net/manual/en/function.echo).)
+The `echo` statement allows us to output strings and can contain HTML/markup. (You can read more about `echo` in the [PHP docs](https://www.php.net/manual/en/function.echo). I should also mention that there are a few other ways to add HTML to PHP files, too.)
 
-I'd recommend using single quotes for the `echo` statement, as you will most likely have double quotes for an `id`, `class`, or `style` in your HTML, and if any strings contain a single quote (like a contraction) make sure to use a backslash (for instance, `that's` becomes `that\'s`).
+I'd recommend using single quotes for the `echo` statement, as you will most likely have double quotes for an `id`, `class`, or `style` in your HTML, and if any strings contain a single quote (like a contraction) make sure to use a backslash or an escape character (for instance, `that's` becomes `that\'s`).
 
-Once you have these files added to the server, you can then use PHP to add them on each HTML page. 
+Once you have these files added to the server, you can then use PHP to add them to each HTML page. 
 
 There's two things left to do:
 
@@ -67,6 +67,7 @@ There's a couple reasons I prefer this (and why I would assume most people would
 3. Since the navbar, footer, and sidebars are all repeated on most pages, you use these elements and PHP files almost like you would use components in Vue.js (or maybe it's the other way around)
 4. There's one central file for each element, and as updates are needed, the links or information can be updated in one place, rather than by needing to edit every page of the site where an element appears (which is bad form, tedious, and increases the chances of making an error)
 5. In some files, where all of these elements appear, 50-150 lines of code have been replaced by 12 lines
+6. These parts of the webpage are now server-side and compiled there before reaching the browser
 
 Overall, it took longer to write this blog post than it did to refactor the HTML and add PHP to the files!
 ## Further Reading
