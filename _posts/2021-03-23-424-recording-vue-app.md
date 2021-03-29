@@ -34,7 +34,7 @@ The original site is a static site that is hardcoded using HTML, [Bulma (a CSS f
 
 Similarly, another pro to using Vue is reusing the header, footer, sidebars, etc. While the static site is rudimentary, with the header, footer, and sidebars copied over to each new page created, with Vue, these components are coded once and then loaded to each .vue file as needed. 
 
-(Since writing this post, I implemented reusable PHP templates for the header, footer, and sidebars on the static site which you can read about [here](https://mikeparish.github.io/mikecodes/webdev/2021/03/24/php-for-sharing-navbars-footers-and-other-repeated-elements-across-a-website.html).) 
+(Since writing this readme, I implemented reusable PHP templates for the header, footer, and sidebars on the static site which you can read about [here](https://mikeparish.github.io/mikecodes/webdev/2021/03/24/php-for-sharing-navbars-footers-and-other-repeated-elements-across-a-website.html).) 
 
 The reason the static site was built like this was due to my inexperience creating static websites a few years ago, and goes to show that simple sites can become unneccessarily complex if you don't plan for the long term! Originally, the site was also meant to be a landing page for a mailing list and contact information (the first version was actually one .html file) so it was perfect for what was needed. Presently, it would probably make sense to refactor the site and utilize PHP or JS to display a header, footer, and sidebars sitewide.
 
