@@ -38,7 +38,7 @@ If we know the head node, we traverse the list until we find the value of the no
 
 Another method we could use, if this was a doubly-linked list, is a previous node pointer, since doubly-linked list nodes have both next and previous node pointers. This would make our job very easy, since we're given the node to be deleted and we'd instantly have the information about the previous and next node pointers we'd need to change to delete the node-to-be-deleted.
 
-Unforutnately, this is not a doubly-linked list.
+Unfortunately, this is not a doubly-linked list.
 
 Here's what we've got: a value, a pointer to the next node, and a setter method.
 
