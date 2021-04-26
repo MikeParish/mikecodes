@@ -61,6 +61,7 @@ While thinking about this question, I took a good amount of time trying to figur
     node.val
     node.next
     //the rest of the list
+
 The big realization was this: I don't know what the previous node is but I do know that it is pointing to the node-to-be-deleted. That's only a dead-end if I want to try and change that to the node after the node-to-be-deleted. So what can be done if that can't be changed?
 
 Perhaps the title, "Overwrite Node in a Linked List" for the question would make more sense.
